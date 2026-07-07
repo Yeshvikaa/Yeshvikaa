@@ -1,0 +1,398 @@
+#!/usr/bin/env python3
+"""
+Elite GitHub Profile README Generator
+Automatically fetches repository data and generates a premium README.
+"""
+
+import os
+import sys
+import json
+import re
+import requests
+from datetime import datetime, timezone
+from collections import defaultdict
+
+# ─── CONFIG ───────────────────────────────────────────────────────────────────
+GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
+USERNAME = os.environ.get("GITHUB_USERNAME", "Yeshvikaa")
+TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "..", "templates", "README.template.md")
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "README.md")
+
+HEADERS = {
+    "Authorization": f"token {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github+json",
+}
+
+# ─── DETECTION MAPS ───────────────────────────────────────────────────────────
+LANG_ICON_MAP = {
+    "Python": "python", "JavaScript": "javascript", "TypeScript": "typescript",
+    "Kotlin": "kotlin", "Java": "java", "PHP": "php", "SQL": "mysql",
+    "C++": "cpp", "C": "c", "Go": "go", "Rust": "rust", "Swift": "swift",
+    "Dart": "dart", "Ruby": "ruby", "Shell": "bash",
+}
+
+FRAMEWORK_KEYWORDS = {
+    "react": "React", "next": "Next.js", "vue": "Vue.js", "angular": "Angular",
+    "django": "Django", "flask": "Flask", "fastapi": "FastAPI", "express": "Express.js",
+    "spring": "Spring Boot", "node": "Node.js", "flutter": "Flutter",
+    "retrofit": "Retrofit", "tensorflow": "TensorFlow", "pytorch": "PyTorch",
+    "opencv": "OpenCV", "yolo": "YOLO", "firebase": "Firebase",
+    "mongodb": "MongoDB", "mysql": "MySQL", "postgres": "PostgreSQL",
+    "sqlite": "SQLite", "docker": "Docker", "kubernetes": "Kubernetes",
+    "aws": "AWS", "azure": "Azure", "gcp": "GCP",
+    "tailwind": "Tailwind CSS", "bootstrap": "Bootstrap",
+}
+
+CATEGORY_RULES = {
+    "🤖 AI & Machine Learning": ["ai", "ml", "machine", "model", "predict", "neural", "deep", "learn",
+                                   "tensorflow", "pytorch", "yolo", "opencv", "face", "recognition", "nlp"],
+    "📱 Android Development": ["app", "android", "kotlin", "jetpack", "retrofit", "mvvm", "mobile"],
+    "🌐 Full Stack Web": ["website", "web", "frontend", "backend", "fullstack", "next", "react",
+                          "vue", "angular", "node", "express", "mind_vault", "mind-match",
+                          "skin-journey", "xephora", "moodmusic", "food_bridge", "focus_shield",
+                          "mind_dump", "mind_guard", "BOEW", "attendance"],
+    "⚙️ Backend Systems": ["backend", "api", "server", "flask", "fastapi", "django",
+                            "spring", "rest", "graphql"],
+    "🔬 Healthcare & Research": ["health", "medical", "care", "scan", "endo", "maxillo",
+                                  "histo", "lifescan", "quantum", "clinical"],
+    "📊 Data & Analytics": ["data", "analytics", "dashboard", "report", "power", "tableau",
+                             "chart", "visual", "tracking", "attendance"],
+    "🛠️ Automation & Tools": ["automation", "tool", "script", "workflow", "ci", "cd",
+                               "action", "deploy", "pipeline", "trackaroo", "track"],
+}
+
+PROFESSIONAL_DESCRIPTIONS = {
+    "mind_guard": "Enterprise-grade mental wellness platform with comprehensive testing infrastructure (330+ automated test cases), real-time security monitoring, and multi-layer CI/CD pipeline using TypeScript/Next.js ecosystem.",
+    "mind-match": "AI-powered cognitive assessment platform featuring adaptive difficulty algorithms, real-time performance analytics, and gamified mental health evaluation built with modern JavaScript.",
+    "xephora": "Cutting-edge beauty-tech e-commerce platform with AI-driven product recommendations, personalized skincare analysis, and seamless checkout experience leveraging JavaScript.",
+    "skin-journey2": "Advanced dermatological tracking application featuring AI-powered skin analysis, treatment progress monitoring, and personalized skincare regimen management with React.",
+    "skin-journey": "Progressive web application for personalized skincare journeys, incorporating computer vision-based skin condition assessment and treatment recommendation engine.",
+    "focus_shield_project": "Intelligent productivity and digital wellness platform with adaptive focus sessions, distraction blocking, and behavioral analytics to optimize cognitive performance.",
+    "mind_dump": "Full-stack knowledge management platform built with TypeScript/Next.js, featuring AI-powered content organization, semantic search, and collaborative note-taking capabilities.",
+    "BOEW": "Back of Envelope Web — rapid prototyping and feasibility calculation tool for engineers and product managers, enabling quick technical scoping with beautiful visualization.",
+    "attendance_face_recognition": "Production-ready facial recognition attendance system with real-time biometric identification, anti-spoofing measures, and automated reporting dashboard.",
+    "moodmusic": "Emotion-aware music recommendation engine leveraging sentiment analysis and user behavior patterns to curate personalized playlists that match psychological states.",
+    "food_bridge": "Community-driven food redistribution platform connecting surplus food donors with hunger relief organizations, featuring intelligent logistics routing built with Python/Flask.",
+    "mind_vault_website": "Professional portfolio and knowledge vault website built with TypeScript/Next.js, showcasing projects with interactive visualizations and dynamic content management.",
+    "school_assessment_backend": "Scalable academic assessment management system with automated test generation, adaptive evaluation engine, and comprehensive analytics for educators. Python/FastAPI + SQLite.",
+    "pinsight_backend": "RESTful API backend for the Pinsight learning platform, implementing JWT authentication, role-based access control, video tracking, and adaptive assessment workflows with Python/Flask.",
+    "pinsight_app": "Android Kotlin application for structured learning featuring MVVM architecture, video lesson playback tracking, pre/post assessment modules, and Retrofit-based API integration.",
+    "pinsight_app_backend": "Laravel PHP backend providing robust API infrastructure for the Pinsight e-learning platform with comprehensive CRUD operations and real-time progress tracking.",
+    "endo_lifescan_app": "Medical-grade endoscopy scan management Android app with Kotlin, enabling clinical image capture, AI-assisted analysis, and secure patient data management through MVVM architecture.",
+    "endo_lifescan_app_backend": "Python FastAPI backend for the EndoLifeScan medical platform, implementing secure medical image storage, patient record management, and diagnostic report generation.",
+    "trackaroo_app": "Full-featured expense and activity tracking Android application built with Kotlin, featuring intuitive UX, real-time synchronization, offline-first architecture, and insightful spending analytics.",
+    "trackaroo_app_backend": "PHP Laravel backend powering the Trackaroo tracking platform with RESTful APIs, secure authentication, and comprehensive financial data management endpoints.",
+    "histoquanta_app": "Android application for histological data quantification in medical research, enabling precise cellular analysis, statistical reporting, and research data export via Kotlin/MVVM.",
+    "histoquanta_app_backend": "PHP backend system for the HistoQuanta medical research platform, providing secure data storage, analytical computation APIs, and research report generation.",
+    "maxillocare_app": "Specialized Android application for maxillofacial care management built with Kotlin, featuring patient tracking, treatment planning, appointment scheduling, and clinical progress monitoring.",
+    "maxillocare_app_backend": "PHP-based RESTful backend for the MaxilloCare dental platform with patient management, appointment scheduling APIs, and clinical data security compliance.",
+    "spark_app_backend": "Enterprise-grade PHP backend for the Spark social platform with scalable API architecture, real-time notifications, and comprehensive user engagement features.",
+    "spark_backend": "Python microservices backend for Spark platform, implementing event-driven architecture, message queuing, and high-performance data processing pipelines.",
+    "spark_app": "Feature-rich social interaction platform with real-time messaging, content discovery, and community building capabilities leveraging modern mobile architecture.",
+}
+
+# ─── API HELPERS ──────────────────────────────────────────────────────────────
+
+def get_user_info():
+    url = f"https://api.github.com/users/{USERNAME}"
+    r = requests.get(url, headers=HEADERS, timeout=15)
+    r.raise_for_status()
+    return r.json()
+
+def get_all_repos():
+    repos = []
+    page = 1
+    while True:
+        url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&sort=updated"
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        r.raise_for_status()
+        batch = r.json()
+        if not batch:
+            break
+        repos.extend(batch)
+        page += 1
+    return [r for r in repos if not r.get("archived") and r["name"] != USERNAME]
+
+def get_repo_languages(repo_name):
+    url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/languages"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+        r.raise_for_status()
+        return r.json()
+    except Exception:
+        return {}
+
+def get_commit_count(repo_name, default_branch="main"):
+    url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits?per_page=1"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+        if "Link" in r.headers:
+            last = r.headers["Link"].split(",")[-1]
+            m = re.search(r"page=(\d+)", last)
+            if m:
+                return int(m.group(1))
+        commits = r.json()
+        return len(commits) if isinstance(commits, list) else 0
+    except Exception:
+        return 0
+
+# ─── CATEGORIZATION ───────────────────────────────────────────────────────────
+
+def categorize_repo(repo):
+    name = repo["name"].lower()
+    desc = (repo.get("description") or "").lower()
+    lang = (repo.get("language") or "").lower()
+    topics = [t.lower() for t in repo.get("topics", [])]
+    
+    text = f"{name} {desc} {lang} {' '.join(topics)}"
+    
+    for category, keywords in CATEGORY_RULES.items():
+        for kw in keywords:
+            if kw in text:
+                return category
+    return "🛠️ Automation & Tools"
+
+def detect_frameworks(repo_name, languages, description=""):
+    detected = []
+    name_lower = repo_name.lower()
+    desc_lower = (description or "").lower()
+    lang_names = [l.lower() for l in languages.keys()]
+    
+    combined = f"{name_lower} {desc_lower} {' '.join(lang_names)}"
+    
+    for kw, framework in FRAMEWORK_KEYWORDS.items():
+        if kw in combined:
+            detected.append(framework)
+    
+    return list(set(detected))
+
+def get_tech_badge(tech):
+    badges = {
+        "Python": "https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white",
+        "JavaScript": "https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black",
+        "TypeScript": "https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white",
+        "Kotlin": "https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white",
+        "PHP": "https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white",
+        "Java": "https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white",
+        "React": "https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black",
+        "Next.js": "https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white",
+        "Flask": "https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white",
+        "FastAPI": "https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white",
+        "Firebase": "https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black",
+        "MongoDB": "https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white",
+        "MySQL": "https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white",
+        "PostgreSQL": "https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white",
+        "SQLite": "https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white",
+        "Docker": "https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white",
+        "TensorFlow": "https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white",
+        "PyTorch": "https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white",
+        "OpenCV": "https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white",
+        "Node.js": "https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white",
+        "Express.js": "https://img.shields.io/badge/Express.js-000000?style=flat&logo=express&logoColor=white",
+        "Vue.js": "https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white",
+        "Angular": "https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white",
+        "Flutter": "https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white",
+        "AWS": "https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white",
+        "Azure": "https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white",
+        "GCP": "https://img.shields.io/badge/GCP-4285F4?style=flat&logo=googlecloud&logoColor=white",
+        "Retrofit": "https://img.shields.io/badge/Retrofit-48B983?style=flat&logo=android&logoColor=white",
+        "Spring Boot": "https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white",
+        "Django": "https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white",
+        "Tailwind CSS": "https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white",
+    }
+    return badges.get(tech, "")
+
+# ─── PROJECT CARD BUILDER ─────────────────────────────────────────────────────
+
+def build_project_card(repo, languages, commit_count):
+    name = repo["name"]
+    url = repo["html_url"]
+    lang = repo.get("language") or "Multi-Language"
+    stars = repo.get("stargazers_count", 0)
+    forks = repo.get("forks_count", 0)
+    updated = repo.get("updated_at", "")[:10]
+    
+    desc = PROFESSIONAL_DESCRIPTIONS.get(name, repo.get("description") or f"A professional {lang} project showcasing modern software engineering practices.")
+    frameworks = detect_frameworks(name, languages, desc)
+    
+    # Build tech stack line
+    tech_items = list(languages.keys())[:3]
+    if frameworks:
+        tech_items += frameworks[:2]
+    tech_stack = " • ".join(tech_items) if tech_items else lang
+    
+    # Status badge
+    days_since = 0
+    try:
+        updated_dt = datetime.fromisoformat(repo.get("updated_at", "").replace("Z", "+00:00"))
+        days_since = (datetime.now(timezone.utc) - updated_dt).days
+    except Exception:
+        pass
+    
+    if days_since < 30:
+        status = "🟢 **Active Development**"
+    elif days_since < 180:
+        status = "🟡 **Maintained**"
+    else:
+        status = "🔵 **Stable**"
+    
+    commits_str = f"{commit_count}+" if commit_count else "N/A"
+    
+    card = f"""<details>
+<summary><b>🔹 {name.replace('_', ' ').replace('-', ' ').title()}</b> &nbsp;·&nbsp; <code>{lang}</code> &nbsp;·&nbsp; ⭐ {stars} &nbsp; 🍴 {forks}</summary>
+
+<br>
+
+> {desc}
+
+| Attribute | Details |
+|-----------|---------|
+| **Tech Stack** | `{tech_stack}` |
+| **Language** | `{lang}` |
+| **Commits** | `{commits_str}` |
+| **Last Updated** | `{updated}` |
+| **Status** | {status} |
+
+**🔗 [View Repository]({url})**
+
+---
+
+</details>"""
+    return card
+
+# ─── TECH STACK BUILDER ───────────────────────────────────────────────────────
+
+def build_tech_section(all_languages, all_frameworks):
+    def skill_icon(name_lower):
+        return f"https://skillicons.dev/icons?i={name_lower}"
+    
+    lang_badges = []
+    for lang in sorted(all_languages):
+        icon_key = LANG_ICON_MAP.get(lang)
+        if icon_key:
+            lang_badges.append(f'<img src="{skill_icon(icon_key)}" height="40" alt="{lang}" />')
+    
+    fw_badge_map = {
+        "React": "react", "Next.js": "nextjs", "Node.js": "nodejs", "Express.js": "express",
+        "Django": "django", "Flask": "flask", "FastAPI": "fastapi", "Vue.js": "vue",
+        "Angular": "angular", "Flutter": "flutter", "Spring Boot": "spring",
+        "TensorFlow": "tensorflow", "PyTorch": "pytorch", "Firebase": "firebase",
+        "MongoDB": "mongodb", "MySQL": "mysql", "PostgreSQL": "postgres",
+        "SQLite": "sqlite", "Docker": "docker", "AWS": "aws", "Azure": "azure",
+        "GCP": "gcp", "Kotlin": "kotlin",
+    }
+    
+    fw_badges = []
+    for fw in sorted(all_frameworks):
+        icon_key = fw_badge_map.get(fw)
+        if icon_key:
+            fw_badges.append(f'<img src="{skill_icon(icon_key)}" height="40" alt="{fw}" />')
+    
+    lang_row = "\n".join(lang_badges) if lang_badges else "<!-- no languages -->"
+    fw_row = "\n".join(fw_badges) if fw_badges else "<!-- no frameworks -->"
+    
+    return lang_row, fw_row
+
+# ─── MAIN README BUILDER ──────────────────────────────────────────────────────
+
+def build_readme(user, repos):
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    total_repos = len(repos)
+    
+    # Aggregate stats
+    all_languages = set()
+    all_frameworks = set()
+    categorized = defaultdict(list)
+    
+    for repo in repos:
+        lang = repo.get("language")
+        if lang:
+            all_languages.add(lang)
+        
+        languages = get_repo_languages(repo["name"])
+        all_languages.update(languages.keys())
+        
+        frameworks = detect_frameworks(repo["name"], languages, repo.get("description", ""))
+        all_frameworks.update(frameworks)
+        
+        category = categorize_repo(repo)
+        categorized[category].append((repo, languages))
+    
+    lang_icons, fw_icons = build_tech_section(all_languages, all_frameworks)
+    
+    # Build featured projects (top 8 by size)
+    top_repos = sorted(repos, key=lambda r: r.get("size", 0), reverse=True)[:8]
+    featured_cards = []
+    for repo in top_repos:
+        if repo["name"] in ["sample", "spark_app", "spark_backend"]:
+            continue
+        langs = get_repo_languages(repo["name"])
+        commits = get_commit_count(repo["name"])
+        card = build_project_card(repo, langs, commits)
+        featured_cards.append(card)
+    
+    # Build category sections
+    category_sections = []
+    for cat, repo_list in sorted(categorized.items()):
+        if not repo_list:
+            continue
+        section_lines = [f"\n### {cat}\n"]
+        for repo, languages in repo_list:
+            if repo["name"] in ["sample", "Yeshvikaa"]:
+                continue
+            lang = repo.get("language") or "Multi"
+            url = repo["html_url"]
+            name_fmt = repo["name"].replace("_", " ").replace("-", " ").title()
+            desc_short = PROFESSIONAL_DESCRIPTIONS.get(repo["name"], repo.get("description") or f"Professional {lang} project")
+            desc_short = desc_short[:120] + "..." if len(desc_short) > 120 else desc_short
+            section_lines.append(f"- **[{name_fmt}]({url})** — {desc_short}")
+        category_sections.append("\n".join(section_lines))
+    
+    # Read template
+    with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
+        template = f.read()
+    
+    featured_str = "\n\n".join(featured_cards[:6])
+    category_str = "\n".join(category_sections)
+    
+    readme = template\
+        .replace("{{USERNAME}}", USERNAME)\
+        .replace("{{TOTAL_REPOS}}", str(total_repos))\
+        .replace("{{TOTAL_LANGUAGES}}", str(len(all_languages)))\
+        .replace("{{LANG_ICONS}}", lang_icons)\
+        .replace("{{FRAMEWORK_ICONS}}", fw_icons)\
+        .replace("{{FEATURED_PROJECTS}}", featured_str)\
+        .replace("{{ALL_PROJECTS}}", category_str)\
+        .replace("{{LAST_UPDATED}}", now)
+    
+    return readme
+
+# ─── ENTRY POINT ──────────────────────────────────────────────────────────────
+
+def main():
+    print(f"[INFO] Fetching data for @{USERNAME}...")
+    
+    try:
+        user = get_user_info()
+        print(f"[INFO] User found: {user.get('name', USERNAME)}")
+    except Exception as e:
+        print(f"[ERROR] Could not fetch user: {e}")
+        user = {"login": USERNAME, "name": USERNAME}
+    
+    try:
+        repos = get_all_repos()
+        print(f"[INFO] Found {len(repos)} public repositories")
+    except Exception as e:
+        print(f"[ERROR] Could not fetch repos: {e}")
+        sys.exit(1)
+    
+    print("[INFO] Building README...")
+    readme_content = build_readme(user, repos)
+    
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        f.write(readme_content)
+    
+    print(f"[SUCCESS] README.md generated at {OUTPUT_PATH}")
+
+if __name__ == "__main__":
+    main()
