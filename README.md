@@ -34,7 +34,7 @@
 &nbsp;
 <img src="https://img.shields.io/github/followers/Yeshvikaa?style=for-the-badge&color=5B21B6&label=Followers&logo=github&logoColor=white" alt="Followers"/>
 &nbsp;
-<img src="https://img.shields.io/badge/Public_Repos-28-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="28 Repositories"/>
+<img src="https://img.shields.io/badge/Public_Repos-28-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
 
 </div>
 
@@ -58,10 +58,10 @@ I'm **Yeshvika A** — a passionate **Software Engineer** and **AI-powered Appli
 
 ```yaml
 current_focus:
-  building:    "AI-powered wellness & healthcare mobile apps"
-  learning:    "LLM integration, Computer Vision, MLOps"
-  researching: "Multimodal AI for clinical diagnostics"
-  open_to:     "Full-time SWE roles, AI/ML internships, open source"
+  - Building:        "AI-powered wellness & healthcare mobile apps"
+  - Learning:        "LLM integration, Computer Vision, MLOps"
+  - researching:     "Multimodal AI for clinical diagnostics"
+  - open_to:         "Full-time SWE roles, AI/ML internships, open source"
 
 fun_fact: "I've shipped 28+ production projects spanning healthcare, education & FinTech 🚀"
 ```
@@ -78,26 +78,22 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 <div align="center">
 
-### ⚡ Languages
-<img src="https://skillicons.dev/icons?i=python,javascript,typescript,kotlin,php,java,cpp,bash&theme=dark" alt="Languages"/>
+### Languages
+<img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" />
+<img src="https://skillicons.dev/icons?i=javascript" height="40" alt="JavaScript" />
+<img src="https://skillicons.dev/icons?i=kotlin" height="40" alt="Kotlin" />
+<img src="https://skillicons.dev/icons?i=php" height="40" alt="PHP" />
+<img src="https://skillicons.dev/icons?i=python" height="40" alt="Python" />
+<img src="https://skillicons.dev/icons?i=typescript" height="40" alt="TypeScript" />
 
-### 🚀 Frameworks & Libraries
-<img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,express,django,flask,fastapi,spring&theme=dark" alt="Frameworks"/>
-
-### 📱 Mobile & AI
-<img src="https://skillicons.dev/icons?i=kotlin,androidstudio,tensorflow,pytorch,opencv&theme=dark" alt="Mobile & AI"/>
-
-### 🗄️ Databases & Cloud
-<img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,sqlite,firebase,aws,gcp&theme=dark" alt="Databases"/>
-
-### 🔧 DevOps & Tools
-<img src="https://skillicons.dev/icons?i=docker,githubactions,git,linux,nginx,vscode,figma&theme=dark" alt="DevOps"/>
+### Frameworks & Platforms
+<!-- no frameworks -->
 
 </div>
 
 <br/>
 
-### 📋 Full Stack at a Glance
+### Full Stack at a Glance
 
 | Domain | Technologies |
 |--------|-------------|
@@ -108,8 +104,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 | **AI / ML** | TensorFlow · PyTorch · OpenCV · YOLO · Scikit-learn · NLP |
 | **Databases** | PostgreSQL · MySQL · SQLite · MongoDB · Firebase Firestore |
 | **DevOps** | GitHub Actions · CI/CD Pipelines · Docker · Linux · Nginx |
-| **Cloud** | Firebase · AWS · Vercel · Railway · Render |
+| **Cloud** | Firebase · AWS (basics) · Vercel · Railway · Render |
 | **Testing** | Jest · Selenium · Appium · Pytest · JUnit · Postman |
+| **Tools** | Git · VS Code · Android Studio · Figma · Postman · Jira |
 
 ---
 
@@ -123,7 +120,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 |--------|------------|------------|------------------------|
 | **Computer Vision** | ████████░░ Advanced | ~1 year | Face Recognition Attendance, EndoLifeScan |
 | **Natural Language Processing** | ███████░░░ Intermediate | ~8 months | MindGuard, MindDump, MoodMusic |
-| **Facial Biometrics** | ████████░░ Advanced | ~1 year | Attendance Face Recognition |
+| **Facial Biometrics** | ████████░░ Advanced | ~1 year | AttendanceFaceRecognition |
 | **Medical AI** | ███████░░░ Intermediate | ~8 months | HistoQuanta, EndoLifeScan, MaxilloCare |
 | **ML Pipelines** | ██████░░░░ Growing | ~6 months | FoodBridge, SkinJourney |
 | **AI-powered UX** | ████████░░ Advanced | ~1 year | MindMatch, FocusShield, XEphora |
@@ -136,24 +133,87 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 🚀 Featured Projects
 
-> Auto-generated from GitHub repositories · Last updated: **2026-07-07 16:20 UTC**
+> Auto-generated from GitHub repositories · Last updated: **2026-07-07 16:58 UTC**
 
 <details>
-<summary><b>🔹 Mind Guard</b> &nbsp;·&nbsp; <code>TypeScript</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
+<summary><b>🔹 Spark App Backend</b> &nbsp;·&nbsp; <code>PHP</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
 
 <br>
 
-> Enterprise-grade mental wellness platform with comprehensive testing infrastructure (330+ automated test cases), real-time security monitoring, and multi-layer CI/CD pipeline using TypeScript/Next.js ecosystem.
+> Enterprise-grade PHP backend for the Spark social platform with scalable API architecture, real-time notifications, and comprehensive user engagement features.
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `TypeScript · Next.js · Node.js` |
-| **Language** | `TypeScript` |
-| **Architecture** | Full-Stack · MVVM · REST API · CI/CD Pipeline |
-| **Key Features** | Mental health monitoring · Automated testing · Security scanning · Real-time analytics |
-| **Status** | 🟢 **Active Development** |
+| **Tech Stack** | `PHP` |
+| **Language** | `PHP` |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-03-24` |
+| **Status** | 🟡 **Maintained** |
 
-**🔗 [View Repository](https://github.com/Yeshvikaa/mind_guard)**
+**🔗 [View Repository](https://github.com/Yeshvikaa/spark_app_backend)**
+
+---
+
+</details>
+
+<details>
+<summary><b>🔹 School Assessment Backend</b> &nbsp;·&nbsp; <code>Python</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
+
+<br>
+
+> Scalable academic assessment management system with automated test generation, adaptive evaluation engine, and comprehensive analytics for educators. Python/FastAPI + SQLite.
+
+| Attribute | Details |
+|-----------|---------|
+| **Tech Stack** | `Python • FastAPI • SQLite` |
+| **Language** | `Python` |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-04-12` |
+| **Status** | 🟡 **Maintained** |
+
+**🔗 [View Repository](https://github.com/Yeshvikaa/school_assessment_backend)**
+
+---
+
+</details>
+
+<details>
+<summary><b>🔹 Maxillocare App</b> &nbsp;·&nbsp; <code>Kotlin</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
+
+<br>
+
+> Specialized Android application for maxillofacial care management built with Kotlin, featuring patient tracking, treatment planning, appointment scheduling, and clinical progress monitoring.
+
+| Attribute | Details |
+|-----------|---------|
+| **Tech Stack** | `Kotlin • Python • Java` |
+| **Language** | `Kotlin` |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-03-16` |
+| **Status** | 🟡 **Maintained** |
+
+**🔗 [View Repository](https://github.com/Yeshvikaa/maxillocare_app)**
+
+---
+
+</details>
+
+<details>
+<summary><b>🔹 Histoquanta App</b> &nbsp;·&nbsp; <code>Kotlin</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
+
+<br>
+
+> Android application for histological data quantification in medical research, enabling precise cellular analysis, statistical reporting, and research data export via Kotlin/MVVM.
+
+| Attribute | Details |
+|-----------|---------|
+| **Tech Stack** | `Kotlin` |
+| **Language** | `Kotlin` |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-03-16` |
+| **Status** | 🟡 **Maintained** |
+
+**🔗 [View Repository](https://github.com/Yeshvikaa/histoquanta_app)**
 
 ---
 
@@ -168,10 +228,10 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `TypeScript · Next.js · Node.js · AI/ML` |
+| **Tech Stack** | `TypeScript • CSS • JavaScript • Next.js` |
 | **Language** | `TypeScript` |
-| **Architecture** | Full-Stack · REST API · Real-time sync |
-| **Key Features** | Knowledge management · AI organization · Semantic search · Collaboration |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-06-02` |
 | **Status** | 🟡 **Maintained** |
 
 **🔗 [View Repository](https://github.com/Yeshvikaa/mind_dump)**
@@ -189,118 +249,13 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Kotlin · Android · Retrofit · MVVM` |
+| **Tech Stack** | `Kotlin • Java` |
 | **Language** | `Kotlin` |
-| **Architecture** | MVVM · Clean Architecture · Offline-first |
-| **Key Features** | Expense tracking · Real-time sync · Analytics dashboard · Offline support |
-| **Status** | 🔵 **Stable** |
-
-**🔗 [View Repository](https://github.com/Yeshvikaa/trackaroo_app)**
-
----
-
-</details>
-
-<details>
-<summary><b>🔹 Histoquanta App</b> &nbsp;·&nbsp; <code>Kotlin</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
-
-<br>
-
-> Android application for histological data quantification in medical research, enabling precise cellular analysis, statistical reporting, and research data export via Kotlin/MVVM.
-
-| Attribute | Details |
-|-----------|---------|
-| **Tech Stack** | `Kotlin · Android · REST API · Medical AI` |
-| **Language** | `Kotlin` |
-| **Architecture** | MVVM · Clean Architecture · Medical-grade data handling |
-| **Key Features** | Histological analysis · Statistical reporting · Data export · Clinical accuracy |
-| **Status** | 🔵 **Stable** |
-
-**🔗 [View Repository](https://github.com/Yeshvikaa/histoquanta_app)**
-
----
-
-</details>
-
-<details>
-<summary><b>🔹 Maxillocare App</b> &nbsp;·&nbsp; <code>Kotlin</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
-
-<br>
-
-> Specialized Android application for maxillofacial care management built with Kotlin, featuring patient tracking, treatment planning, appointment scheduling, and clinical progress monitoring.
-
-| Attribute | Details |
-|-----------|---------|
-| **Tech Stack** | `Kotlin · Android · PHP Laravel · REST API` |
-| **Language** | `Kotlin` |
-| **Architecture** | MVVM · Client-Server · Healthcare compliance |
-| **Key Features** | Patient management · Treatment planning · Appointment scheduling · Progress tracking |
-| **Status** | 🔵 **Stable** |
-
-**🔗 [View Repository](https://github.com/Yeshvikaa/maxillocare_app)**
-
----
-
-</details>
-
-<details>
-<summary><b>🔹 Xephora</b> &nbsp;·&nbsp; <code>JavaScript</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
-
-<br>
-
-> Cutting-edge beauty-tech e-commerce platform with AI-driven product recommendations, personalized skincare analysis, and seamless checkout experience leveraging JavaScript.
-
-| Attribute | Details |
-|-----------|---------|
-| **Tech Stack** | `JavaScript · React · Node.js · AI/ML` |
-| **Language** | `JavaScript` |
-| **Architecture** | Full-Stack · Recommendation Engine · E-commerce |
-| **Key Features** | AI recommendations · Skincare analysis · Smooth checkout · Product catalog |
+| **Commits** | `1+` |
+| **Last Updated** | `2026-03-15` |
 | **Status** | 🟡 **Maintained** |
 
-**🔗 [View Repository](https://github.com/Yeshvikaa/xephora)**
-
----
-
-</details>
-
-<details>
-<summary><b>🔹 Pinsight App</b> &nbsp;·&nbsp; <code>Kotlin</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
-
-<br>
-
-> Android Kotlin application for structured learning featuring MVVM architecture, video lesson playback tracking, pre/post assessment modules, and Retrofit-based API integration.
-
-| Attribute | Details |
-|-----------|---------|
-| **Tech Stack** | `Kotlin · Android · Retrofit · PHP Laravel` |
-| **Language** | `Kotlin` |
-| **Architecture** | MVVM · Role-based access · Video tracking |
-| **Key Features** | Structured learning · Video playback · Pre/post tests · Progress analytics |
-| **Status** | 🔵 **Stable** |
-
-**🔗 [View Repository](https://github.com/Yeshvikaa/pinsight_app)**
-
----
-
-</details>
-
-<details>
-<summary><b>🔹 School Assessment Backend</b> &nbsp;·&nbsp; <code>Python</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
-
-<br>
-
-> Scalable academic assessment management system with automated test generation, adaptive evaluation engine, and comprehensive analytics for educators. Python/FastAPI + SQLite.
-
-| Attribute | Details |
-|-----------|---------|
-| **Tech Stack** | `Python · FastAPI · SQLite · REST API` |
-| **Language** | `Python` |
-| **Architecture** | Microservices · RESTful API · Adaptive engine |
-| **Key Features** | Auto test generation · Adaptive evaluation · Teacher analytics · Role-based access |
-| **Status** | 🔵 **Stable** |
-
-**🔗 [View Repository](https://github.com/Yeshvikaa/school_assessment_backend)**
+**🔗 [View Repository](https://github.com/Yeshvikaa/trackaroo_app)**
 
 ---
 
@@ -314,49 +269,47 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 📂 Complete Project Portfolio
 
-> **28 repositories** spanning **7 programming languages** — categorized by domain.
+> **28 repositories** spanning **11 programming languages** — auto-discovered and categorized.
 
-### 🤖 AI & Machine Learning
-
-- **[Attendance Face Recognition](https://github.com/Yeshvikaa/attendance_face_recognition)** — Production-ready facial recognition attendance system with real-time biometric identification, anti-spoofing measures, and automated reporting dashboard.
-- **[Skin Journey 2](https://github.com/Yeshvikaa/skin-journey2)** — Advanced dermatological tracking application featuring AI-powered skin analysis, treatment progress monitoring, and personalized skincare regimen management with React.
-- **[Skin Journey](https://github.com/Yeshvikaa/skin-journey)** — Progressive web application for personalized skincare journeys, incorporating computer vision-based skin condition assessment and treatment recommendation engine.
-- **[MoodMusic](https://github.com/Yeshvikaa/moodmusic)** — Emotion-aware music recommendation engine leveraging sentiment analysis and user behavior patterns to curate personalized playlists that match psychological states.
-
-### 📱 Android Development
-
-- **[Trackaroo App](https://github.com/Yeshvikaa/trackaroo_app)** — Full-featured expense and activity tracking Android app with real-time synchronization, offline-first architecture, and insightful spending analytics.
-- **[Trackaroo App Backend](https://github.com/Yeshvikaa/trackaroo_app_backend)** — PHP Laravel backend powering the Trackaroo tracking platform with RESTful APIs, secure authentication, and comprehensive financial data management endpoints.
-- **[HistoQuanta App](https://github.com/Yeshvikaa/histoquanta_app)** — Android application for histological data quantification in medical research, enabling precise cellular analysis and statistical reporting via Kotlin/MVVM.
-- **[HistoQuanta App Backend](https://github.com/Yeshvikaa/histoquanta_app_backend)** — PHP backend system for the HistoQuanta medical research platform, providing secure data storage, analytical computation APIs, and research report generation.
-- **[MaxilloCare App](https://github.com/Yeshvikaa/maxillocare_app)** — Specialized Android app for maxillofacial care management with patient tracking, treatment planning, and appointment scheduling.
-- **[MaxilloCare App Backend](https://github.com/Yeshvikaa/maxillocare_app_backend)** — PHP-based RESTful backend for the MaxilloCare dental platform with patient management and clinical data security compliance.
-- **[Pinsight App](https://github.com/Yeshvikaa/pinsight_app)** — Android Kotlin application for structured learning with MVVM architecture, video lesson playback tracking, and pre/post assessment modules.
-- **[Pinsight App Backend](https://github.com/Yeshvikaa/pinsight_app_backend)** — Laravel PHP backend providing robust API infrastructure for the Pinsight e-learning platform with real-time progress tracking.
-- **[EndoLifeScan App](https://github.com/Yeshvikaa/endo_lifescan_app)** — Medical-grade endoscopy scan management Android app with Kotlin, enabling clinical image capture, AI-assisted analysis, and secure patient data management.
-- **[EndoLifeScan App Backend](https://github.com/Yeshvikaa/endo_lifescan_app_backend)** — Python FastAPI backend for the EndoLifeScan medical platform, implementing secure medical image storage, patient record management, and diagnostic report generation.
 
 ### 🌐 Full Stack Web
 
-- **[Mind Guard](https://github.com/Yeshvikaa/mind_guard)** — Enterprise-grade mental wellness platform with 330+ automated test cases, real-time security monitoring, and multi-layer CI/CD pipeline using TypeScript/Next.js.
-- **[Mind Match](https://github.com/Yeshvikaa/mind-match)** — AI-powered cognitive assessment platform featuring adaptive difficulty algorithms, real-time performance analytics, and gamified mental health evaluation.
-- **[Mind Dump](https://github.com/Yeshvikaa/mind_dump)** — Full-stack knowledge management platform with AI-powered content organization, semantic search, and collaborative note-taking capabilities.
-- **[Mind Vault Website](https://github.com/Yeshvikaa/mind_vault_website)** — Professional portfolio and knowledge vault website built with TypeScript/Next.js, featuring interactive visualizations and dynamic content management.
-- **[Xephora](https://github.com/Yeshvikaa/xephora)** — Cutting-edge beauty-tech e-commerce platform with AI-driven product recommendations and personalized skincare analysis.
-- **[Focus Shield Project](https://github.com/Yeshvikaa/focus_shield_project)** — Intelligent productivity and digital wellness platform with adaptive focus sessions, distraction blocking, and behavioral analytics.
-- **[BOEW](https://github.com/Yeshvikaa/BOEW)** — Back of Envelope Web — rapid prototyping and feasibility calculation tool for engineers enabling quick technical scoping with beautiful visualization.
+- **[Mind Match](https://github.com/Yeshvikaa/mind-match)** — AI-powered cognitive assessment platform featuring adaptive difficulty algorithms, real-time performance analytics, and ...
+- **[Mind Guard](https://github.com/Yeshvikaa/mind_guard)** — Enterprise-grade mental wellness platform with comprehensive testing infrastructure (330+ automated test cases), real-ti...
+- **[Xephora](https://github.com/Yeshvikaa/xephora)** — Cutting-edge beauty-tech e-commerce platform with AI-driven product recommendations, personalized skincare analysis, and...
+- **[Skin Journey2](https://github.com/Yeshvikaa/skin-journey2)** — Advanced dermatological tracking application featuring AI-powered skin analysis, treatment progress monitoring, and pers...
+- **[Skin Journey](https://github.com/Yeshvikaa/skin-journey)** — Progressive web application for personalized skincare journeys, incorporating computer vision-based skin condition asses...
+- **[Focus Shield Project](https://github.com/Yeshvikaa/focus_shield_project)** — Intelligent productivity and digital wellness platform with adaptive focus sessions, distraction blocking, and behaviora...
+- **[Mind Dump](https://github.com/Yeshvikaa/mind_dump)** — Full-stack knowledge management platform built with TypeScript/Next.js, featuring AI-powered content organization, seman...
+- **[Moodmusic](https://github.com/Yeshvikaa/moodmusic)** — Emotion-aware music recommendation engine leveraging sentiment analysis and user behavior patterns to curate personalize...
+- **[Food Bridge](https://github.com/Yeshvikaa/food_bridge)** — Community-driven food redistribution platform connecting surplus food donors with hunger relief organizations, featuring...
+- **[Mind Vault Website](https://github.com/Yeshvikaa/mind_vault_website)** — Professional portfolio and knowledge vault website built with TypeScript/Next.js, showcasing projects with interactive v...
+- **[Pinsight Backend](https://github.com/Yeshvikaa/pinsight_backend)** — RESTful API backend for the Pinsight learning platform, implementing JWT authentication, role-based access control, vide...
+- **[School Assessment Backend](https://github.com/Yeshvikaa/school_assessment_backend)** — Scalable academic assessment management system with automated test generation, adaptive evaluation engine, and comprehen...
+- **[Spark Backend](https://github.com/Yeshvikaa/spark_backend)** — Python microservices backend for Spark platform, implementing event-driven architecture, message queuing, and high-perfo...
 
-### ⚙️ Backend Systems
+### 📱 Android Development
 
-- **[Pinsight Backend](https://github.com/Yeshvikaa/pinsight_backend)** — RESTful API backend for the Pinsight learning platform, implementing JWT authentication, role-based access control, and adaptive assessment workflows with Python/Flask.
-- **[School Assessment Backend](https://github.com/Yeshvikaa/school_assessment_backend)** — Scalable academic assessment management system with automated test generation, adaptive evaluation engine, and educator analytics.
-- **[Spark App Backend](https://github.com/Yeshvikaa/spark_app_backend)** — Enterprise-grade PHP backend for the Spark social platform with scalable API architecture and comprehensive user engagement features.
-- **[Spark Backend](https://github.com/Yeshvikaa/spark_backend)** — Python microservices backend for the Spark platform implementing event-driven architecture and high-performance data processing pipelines.
+- **[Spark App Backend](https://github.com/Yeshvikaa/spark_app_backend)** — Enterprise-grade PHP backend for the Spark social platform with scalable API architecture, real-time notifications, and ...
+- **[Endo Lifescan App Backend](https://github.com/Yeshvikaa/endo_lifescan_app_backend)** — Python FastAPI backend for the EndoLifeScan medical platform, implementing secure medical image storage, patient record ...
+- **[Endo Lifescan App](https://github.com/Yeshvikaa/endo_lifescan_app)** — Medical-grade endoscopy scan management Android app with Kotlin, enabling clinical image capture, AI-assisted analysis, ...
+- **[Spark App](https://github.com/Yeshvikaa/spark_app)** — Feature-rich social interaction platform with real-time messaging, content discovery, and community building capabilitie...
+- **[Pinsight App](https://github.com/Yeshvikaa/pinsight_app)** — Android Kotlin application for structured learning featuring MVVM architecture, video lesson playback tracking, pre/post...
+- **[Pinsight App Backend](https://github.com/Yeshvikaa/pinsight_app_backend)** — Laravel PHP backend providing robust API infrastructure for the Pinsight e-learning platform with comprehensive CRUD ope...
+- **[Histoquanta App](https://github.com/Yeshvikaa/histoquanta_app)** — Android application for histological data quantification in medical research, enabling precise cellular analysis, statis...
+- **[Histoquanta App Backend](https://github.com/Yeshvikaa/histoquanta_app_backend)** — PHP backend system for the HistoQuanta medical research platform, providing secure data storage, analytical computation ...
+- **[Maxillocare App](https://github.com/Yeshvikaa/maxillocare_app)** — Specialized Android application for maxillofacial care management built with Kotlin, featuring patient tracking, treatme...
+- **[Maxillocare App Backend](https://github.com/Yeshvikaa/maxillocare_app_backend)** — PHP-based RESTful backend for the MaxilloCare dental platform with patient management, appointment scheduling APIs, and ...
+- **[Trackaroo App Backend](https://github.com/Yeshvikaa/trackaroo_app_backend)** — PHP Laravel backend powering the Trackaroo tracking platform with RESTful APIs, secure authentication, and comprehensive...
+- **[Trackaroo App](https://github.com/Yeshvikaa/trackaroo_app)** — Full-featured expense and activity tracking Android application built with Kotlin, featuring intuitive UX, real-time syn...
 
 ### 🛠️ Automation & Tools
 
-- **[Food Bridge](https://github.com/Yeshvikaa/food_bridge)** — Community-driven food redistribution platform connecting surplus food donors with hunger relief organizations, featuring intelligent logistics routing built with Python/Flask.
-- **[Spark App](https://github.com/Yeshvikaa/spark_app)** — Feature-rich social interaction platform with real-time messaging, content discovery, and community building capabilities.
+- **[Boew](https://github.com/Yeshvikaa/BOEW)** — Back of Envelope Web — rapid prototyping and feasibility calculation tool for engineers and product managers, enabling q...
+
+### 🤖 AI & Machine Learning
+
+- **[Attendance Face Recognition](https://github.com/Yeshvikaa/attendance_face_recognition)** — Production-ready facial recognition attendance system with real-time biometric identification, anti-spoofing measures, a...
 
 ---
 
@@ -367,19 +320,19 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 ## 💼 Professional Journey
 
 ```
-📅 2026 (Present)  ──  Elite GitHub Profile Engineering & Personal Branding
+📅 2026 (Present)  ——  Elite GitHub Profile Engineering & Personal Branding
                        Building: 28+ production projects across healthcare, ed-tech & FinTech
 
-📅 2025–2026       ──  Full Stack & Mobile Developer (Self-directed)
+📅 2025–2026       ——  Full Stack & Mobile Developer (Self-directed)  
                        Stack: Android Kotlin · PHP Laravel · Python FastAPI · Next.js · TypeScript
 
-📅 2025             ──  AI Application Developer
-                       Built: Face Recognition System · AI Mental Wellness Apps · CV tools
+📅 2025             ——  AI Application Developer
+                       Built: Face Recognition System · AI Mental Wellness Apps · Computer Vision tools
 
-📅 2024–2025       ──  Software Engineering Student Projects
+📅 2024–2025       ——  Software Engineering Student Projects
                        Led: MindGuard Platform (330+ automated test cases, enterprise CI/CD)
 
-📅 2024             ──  Open Source & Research Contributions
+📅 2024             ——  Open Source & Research Contributions
                        Focus: Clinical AI · Healthcare Data Management · EdTech platforms
 ```
 
@@ -455,17 +408,17 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Yeshvikaa&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=8B5CF6&text_color=E2E8F0&ring_color=7C3AED&count_private=true">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yeshvikaa&show_icons=true&theme=tokyonight&hide_border=true&title_color=A78BFA&icon_color=8B5CF6&count_private=true" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Yeshvikaa&show_icons=true&theme=tokyonight&hide_border=true&title_color=A78BFA&icon_color=8B5CF6&count_private=true" width="48%" />
 </picture>
-&nbsp;
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Yeshvikaa&theme=tokyonight&hide_border=true&background=0D1117&ring=A78BFA&fire=7C3AED&currStreakLabel=E2E8F0&sideLabels=E2E8F0">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yeshvikaa&theme=tokyonight&hide_border=true" width="48%"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yeshvikaa&theme=tokyonight&hide_border=true" width="48%" />
 </picture>
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yeshvikaa&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=E2E8F0&langs_count=10" width="42%" alt="Top Languages"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yeshvikaa&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=E2E8F0&langs_count=10" width="40%" alt="Top Languages"/>
 
 </div>
 
@@ -487,7 +440,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 <!--           CONTRIBUTION ACTIVITY                     -->
 <!-- ═══════════════════════════════════════════════════ -->
 
-## 📈 Contribution Activity Graph
+## 📈 Contribution Graph
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Yeshvikaa&bg_color=0D1117&color=A78BFA&line=7C3AED&point=E0E7FF&area=true&hide_border=true&area_color=4C1D95" width="100%" alt="Activity Graph"/>
@@ -499,7 +452,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 <!--               SNAKE ANIMATION                       -->
 <!-- ═══════════════════════════════════════════════════ -->
 
-## 🐍 Contribution Snake
+## 🐍 GitHub Contribution Snake
 
 <div align="center">
   <picture>
@@ -518,27 +471,27 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 ## 🎯 Current Focus & Roadmap
 
 ```yaml
-2026_roadmap:
+2026_q3_focus:
   building:
     - "LLM-powered mental health companion app"
     - "Computer vision pipeline for clinical diagnostics"
     - "Automated GitHub profile ecosystem (this!)"
-
+  
   learning:
     - "MLOps: Model deployment with FastAPI + Docker"
     - "Advanced Kotlin: Coroutines, KMP (Kotlin Multiplatform)"
     - "System Design: Distributed systems & microservices"
     - "LangChain & vector databases for RAG applications"
-
+  
   reading:
     - "Designing Data-Intensive Applications — Kleppmann"
     - "Deep Learning — Goodfellow, Bengio, Courville"
     - "Clean Architecture — Robert C. Martin"
-
+  
   open_to:
-    roles:   ["Software Engineer", "ML Engineer", "Android Developer", "Full Stack Developer"]
-    domains: ["HealthTech", "FinTech", "EdTech", "AI Products"]
-    type:    ["Full-time", "Internship", "Research Collaboration"]
+    - roles: ["Software Engineer", "ML Engineer", "Android Developer", "Full Stack Developer"]
+    - domains: ["HealthTech", "FinTech", "EdTech", "AI Products"]
+    - type: ["Full-time", "Internship", "Research Collaboration"]
 ```
 
 ---
@@ -560,7 +513,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 <br/>
 
-**Open to collaborations, opportunities, and interesting technical conversations.**
+**Open to collaborations, opportunities, and interesting technical conversations.** 
 Feel free to reach out — I reply to everyone! ✉️
 
 </div>
@@ -573,7 +526,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=&fontSize=0" width="100%"/>
 
 <br/>
 
@@ -581,7 +534,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <br/>
 
-**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-07 16:20 UTC**
+**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-07 16:58 UTC**
 
 <br/>
 
