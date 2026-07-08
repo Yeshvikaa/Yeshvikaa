@@ -380,6 +380,138 @@ def write_local_svg_assets():
         f.write(typing_content)
     print("[INFO] Local SVG assets created successfully.")
 
+def write_analytics_svg(total_repos, total_stars, total_forks, language_bytes):
+    assets_dir = os.path.join(os.path.dirname(__file__), "..", "assets")
+    os.makedirs(assets_dir, exist_ok=True)
+    
+    LANG_COLORS = {
+        "Python": "#3776AB",
+        "JavaScript": "#F7DF1E",
+        "TypeScript": "#3178C6",
+        "Kotlin": "#7F52FF",
+        "PHP": "#777BB4",
+        "Java": "#ED8B00",
+        "CSS": "#563D7C",
+        "HTML": "#E34F26",
+        "PowerShell": "#012456",
+        "SQL": "#E38A00",
+        "C++": "#F34B7D",
+        "C": "#555555",
+        "Shell": "#89E051",
+    }
+    
+    total_bytes = sum(language_bytes.values())
+    languages_svg_items = []
+    y_offset = 88
+    if total_bytes > 0:
+        sorted_langs = sorted(language_bytes.items(), key=lambda x: x[1], reverse=True)[:6]
+        for lang_name, byte_count in sorted_langs:
+            percentage = (byte_count / total_bytes) * 100
+            lang_color = LANG_COLORS.get(lang_name, "#6E7681")
+            bar_width = int((percentage / 100) * 330) # maximum width of 330px
+            
+            lang_item = f"""
+  <!-- {lang_name} -->
+  <text x="420" y="{y_offset}" class="lang-lbl">{lang_name}</text>
+  <text x="750" y="{y_offset}" class="lang-percent" text-anchor="end">{percentage:.1f}%</text>
+  <rect x="420" y="{y_offset + 8}" width="330" height="8" rx="4" fill="#1E293B" />
+  <rect x="420" y="{y_offset + 8}" width="{bar_width}" height="8" rx="4" fill="{lang_color}" />"""
+            languages_svg_items.append(lang_item)
+            y_offset += 45
+            
+    languages_svg_str = "\n".join(languages_svg_items)
+    
+    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360">
+  <defs>
+    <linearGradient id="violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1B4E" />
+      <stop offset="70%" stop-color="#14112E" />
+      <stop offset="100%" stop-color="#0B091A" />
+    </linearGradient>
+    <style>
+      .card-title {{
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #C084FC;
+        letter-spacing: 1px;
+      }}
+      .stat-val {{
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 800;
+        font-size: 24px;
+        fill: #F3F4F6;
+      }}
+      .stat-lbl {{
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        fill: #9CA3AF;
+      }}
+      .lang-lbl {{
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #E5E7EB;
+      }}
+      .lang-percent {{
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        fill: #A78BFA;
+      }}
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="360" rx="15" fill="url(#violet-grad)" stroke="#4C1D95" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Left Section (Stats) -->
+  <text x="40" y="45" class="card-title">📊 GitHub Analytics</text>
+
+  <!-- Repo Stat Box -->
+  <rect x="40" y="75" width="310" height="70" rx="10" fill="#161334" fill-opacity="0.7" stroke="#4C1d95" stroke-opacity="0.2" stroke-width="1" />
+  <!-- Repo Icon -->
+  <g transform="translate(60, 93)" stroke="#A78BFA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+  </g>
+  <text x="105" y="105" class="stat-val">{total_repos}</text>
+  <text x="105" y="125" class="stat-lbl">Public Repositories</text>
+
+  <!-- Stars Stat Box -->
+  <rect x="40" y="160" width="310" height="70" rx="10" fill="#161334" fill-opacity="0.7" stroke="#4C1d95" stroke-opacity="0.2" stroke-width="1" />
+  <!-- Star Icon -->
+  <g transform="translate(60, 178)" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  </g>
+  <text x="105" y="190" class="stat-val">{total_stars}</text>
+  <text x="105" y="210" class="stat-lbl">Total Stars Received</text>
+
+  <!-- Forks Stat Box -->
+  <rect x="40" y="245" width="310" height="70" rx="10" fill="#161334" fill-opacity="0.7" stroke="#4C1D95" stroke-opacity="0.2" stroke-width="1" />
+  <!-- Fork Icon -->
+  <g transform="translate(60, 263)" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="18" r="3"></circle>
+    <circle cx="6" cy="6" r="3"></circle>
+    <circle cx="18" cy="6" r="3"></circle>
+    <path d="M18 9v2a6 6 0 0 1-12 0V9M12 15V11"></path>
+  </g>
+  <text x="105" y="275" class="stat-val">{total_forks}</text>
+  <text x="105" y="295" class="stat-lbl">Total Forks Created</text>
+
+  <!-- Vertical Divider -->
+  <line x1="390" y1="40" x2="390" y2="320" stroke="#4C1D95" stroke-opacity="0.2" stroke-width="1.5" />
+
+  <!-- Right Section (Languages) -->
+  <text x="420" y="45" class="card-title">⚡ Languages Distribution</text>
+{languages_svg_str}
+</svg>"""
+    
+    with open(os.path.join(assets_dir, "analytics.svg"), "w", encoding="utf-8") as f:
+        f.write(svg_content)
+    print("[INFO] Analytics SVG asset created successfully.")
+
+
 def build_readme(user, repos):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     total_repos = len(repos)
@@ -442,33 +574,10 @@ def build_readme(user, repos):
             section_lines.append(f"- **[{name_fmt}]({url})** — {desc_short}")
         category_sections.append("\n".join(section_lines))
     
-    # Calculate language percentages table
-    total_bytes = sum(language_bytes.values())
-    lang_stats_rows = []
-    if total_bytes > 0:
-        sorted_langs = sorted(language_bytes.items(), key=lambda x: x[1], reverse=True)
-        for lang_name, byte_count in sorted_langs[:8]:  # Top 8 languages
-            percentage = (byte_count / total_bytes) * 100
-            bar_len = int(round((percentage / 100) * 30))
-            bar = "█" * bar_len + "░" * (30 - bar_len)
-            lang_stats_rows.append(f"| **{lang_name}** | {percentage:.1f}% | `{bar}` |")
-            
-    lang_stats_table = "\n".join(lang_stats_rows) if lang_stats_rows else "| - | - | - |"
+    write_analytics_svg(total_repos, total_stars, total_forks, language_bytes)
     
     profile_stats = f"""<div align="center">
-
-| Metric | Total |
-|---|---|
-| 📂 **Public Repositories** | {total_repos} |
-| ⭐ **Total Stars Received** | {total_stars} |
-| 🍴 **Total Forks Created** | {total_forks} |
-
-### 🛠️ Languages Distribution
-
-| Language | Percentage | Graphic Representation |
-|---|---|---|
-{lang_stats_table}
-
+  <img src="https://raw.githubusercontent.com/Yeshvikaa/Yeshvikaa/main/assets/analytics.svg" width="100%" alt="GitHub Analytics"/>
 </div>"""
 
     # Read template
