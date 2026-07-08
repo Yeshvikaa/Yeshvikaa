@@ -19,9 +19,10 @@ TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "..", "templates", "READ
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "README.md")
 
 HEADERS = {
-    "Authorization": f"token {GITHUB_TOKEN}",
     "Accept": "application/vnd.github+json",
 }
+if GITHUB_TOKEN:
+    HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 # ─── DETECTION MAPS ───────────────────────────────────────────────────────────
 LANG_ICON_MAP = {
@@ -295,6 +296,90 @@ def build_tech_section(all_languages, all_frameworks):
 
 # ─── MAIN README BUILDER ──────────────────────────────────────────────────────
 
+def write_local_svg_assets():
+    assets_dir = os.path.join(os.path.dirname(__file__), "..", "assets")
+    os.makedirs(assets_dir, exist_ok=True)
+    
+    header_content = """<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <defs>
+    <linearGradient id="violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="70%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="50%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <style>
+      .name-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        fill: url(#accent-grad);
+      }
+      .title-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        fill: #E2E8F0;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .tagline-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-size: 14px;
+        fill: #94A3B8;
+      }
+    </style>
+  </defs>
+  
+  <!-- Main Background -->
+  <rect width="800" height="220" rx="15" fill="url(#violet-grad)" />
+  
+  <!-- Subtle Grid Pattern for tech feel -->
+  <path d="M 0,20 L 800,20 M 0,40 L 800,40 M 0,60 L 800,60 M 0,80 L 800,80 M 0,100 L 800,100 M 0,120 L 800,120 M 0,140 L 800,140 M 0,160 L 800,160 M 0,180 L 800,180 M 0,200 L 800,200" stroke="#4F46E5" stroke-opacity="0.07" stroke-width="1" />
+  <path d="M 50,0 L 50,220 M 100,0 L 100,220 M 150,0 L 150,220 M 200,0 L 200,220 M 250,0 L 250,220 M 300,0 L 300,220 M 350,0 L 350,220 M 400,0 L 400,220 M 450,0 L 450,220 M 500,0 L 500,220 M 550,0 L 550,220 M 600,0 L 600,220 M 650,0 L 650,220 M 700,0 L 700,220 M 750,0 L 750,220" stroke="#4F46E5" stroke-opacity="0.07" stroke-width="1" />
+
+  <!-- Accent visual elements -->
+  <circle cx="700" cy="80" r="100" fill="#7C3AED" fill-opacity="0.15" filter="blur(20px)" />
+  <circle cx="680" cy="120" r="50" fill="#EC4899" fill-opacity="0.1" filter="blur(15px)" />
+  
+  <!-- Decorative Code Bracket Icon on right -->
+  <path d="M 690,70 L 670,90 L 690,110 M 710,70 L 730,90 L 710,110" stroke="url(#accent-grad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" stroke-opacity="0.7" />
+
+  <!-- Info Box -->
+  <text x="50" y="85" class="name-label">Yeshvikaa H</text>
+  <text x="50" y="125" class="title-label">Software Engineer • AI &amp; Mobile Developer</text>
+  <text x="50" y="160" class="tagline-label">Building secure, production-grade applications &amp; ML pipelines</text>
+  <text x="50" y="180" class="tagline-label">Kotlin (Android) | Python (FastAPI/Flask) | Next.js (TypeScript) | Laravel</text>
+</svg>"""
+
+    typing_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40" width="600" height="40">
+  <defs>
+    <style>
+      .text-animate {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #C084FC;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <text x="50%" y="25" class="text-animate">
+    Building Intelligent Mobile &amp; Web Systems 🚀
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite" />
+  </text>
+</svg>"""
+
+    with open(os.path.join(assets_dir, "header.svg"), "w", encoding="utf-8") as f:
+        f.write(header_content)
+    with open(os.path.join(assets_dir, "typing.svg"), "w", encoding="utf-8") as f:
+        f.write(typing_content)
+    print("[INFO] Local SVG assets created successfully.")
+
 def build_readme(user, repos):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     total_repos = len(repos)
@@ -303,8 +388,14 @@ def build_readme(user, repos):
     all_languages = set()
     all_frameworks = set()
     categorized = defaultdict(list)
+    language_bytes = defaultdict(int)
+    total_stars = 0
+    total_forks = 0
     
     for repo in repos:
+        total_stars += repo.get("stargazers_count", 0)
+        total_forks += repo.get("forks_count", 0)
+        
         lang = repo.get("language")
         if lang:
             all_languages.add(lang)
@@ -312,6 +403,9 @@ def build_readme(user, repos):
         languages = get_repo_languages(repo["name"])
         all_languages.update(languages.keys())
         
+        for lang_name, byte_count in languages.items():
+            language_bytes[lang_name] += byte_count
+            
         frameworks = detect_frameworks(repo["name"], languages, repo.get("description", ""))
         all_frameworks.update(frameworks)
         
@@ -348,6 +442,35 @@ def build_readme(user, repos):
             section_lines.append(f"- **[{name_fmt}]({url})** — {desc_short}")
         category_sections.append("\n".join(section_lines))
     
+    # Calculate language percentages table
+    total_bytes = sum(language_bytes.values())
+    lang_stats_rows = []
+    if total_bytes > 0:
+        sorted_langs = sorted(language_bytes.items(), key=lambda x: x[1], reverse=True)
+        for lang_name, byte_count in sorted_langs[:8]:  # Top 8 languages
+            percentage = (byte_count / total_bytes) * 100
+            bar_len = int(round((percentage / 100) * 30))
+            bar = "█" * bar_len + "░" * (30 - bar_len)
+            lang_stats_rows.append(f"| **{lang_name}** | {percentage:.1f}% | `{bar}` |")
+            
+    lang_stats_table = "\n".join(lang_stats_rows) if lang_stats_rows else "| - | - | - |"
+    
+    profile_stats = f"""<div align="center">
+
+| Metric | Total |
+|---|---|
+| 📂 **Public Repositories** | {total_repos} |
+| ⭐ **Total Stars Received** | {total_stars} |
+| 🍴 **Total Forks Created** | {total_forks} |
+
+### 🛠️ Languages Distribution
+
+| Language | Percentage | Graphic Representation |
+|---|---|---|
+{lang_stats_table}
+
+</div>"""
+
     # Read template
     with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
         template = f.read()
@@ -363,6 +486,7 @@ def build_readme(user, repos):
         .replace("{{FRAMEWORK_ICONS}}", fw_icons)\
         .replace("{{FEATURED_PROJECTS}}", featured_str)\
         .replace("{{ALL_PROJECTS}}", category_str)\
+        .replace("{{PROFILE_STATS}}", profile_stats)\
         .replace("{{LAST_UPDATED}}", now)
     
     return readme
@@ -385,6 +509,8 @@ def main():
     except Exception as e:
         print(f"[ERROR] Could not fetch repos: {e}")
         sys.exit(1)
+        
+    write_local_svg_assets() # Generate local header.svg and typing.svg
     
     print("[INFO] Building README...")
     readme_content = build_readme(user, repos)

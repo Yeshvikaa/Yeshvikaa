@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
+  <defs>
+    <linearGradient id="violet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="70%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="50%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <style>
+      .name-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 900;
+        font-size: 40px;
+        fill: url(#accent-grad);
+      }
+      .title-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        fill: #E2E8F0;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .tagline-label {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-size: 14px;
+        fill: #94A3B8;
+      }
+    </style>
+  </defs>
+  
+  <!-- Main Background -->
+  <rect width="800" height="220" rx="15" fill="url(#violet-grad)" />
+  
+  <!-- Subtle Grid Pattern for tech feel -->
+  <path d="M 0,20 L 800,20 M 0,40 L 800,40 M 0,60 L 800,60 M 0,80 L 800,80 M 0,100 L 800,100 M 0,120 L 800,120 M 0,140 L 800,140 M 0,160 L 800,160 M 0,180 L 800,180 M 0,200 L 800,200" stroke="#4F46E5" stroke-opacity="0.07" stroke-width="1" />
+  <path d="M 50,0 L 50,220 M 100,0 L 100,220 M 150,0 L 150,220 M 200,0 L 200,220 M 250,0 L 250,220 M 300,0 L 300,220 M 350,0 L 350,220 M 400,0 L 400,220 M 450,0 L 450,220 M 500,0 L 500,220 M 550,0 L 550,220 M 600,0 L 600,220 M 650,0 L 650,220 M 700,0 L 700,220 M 750,0 L 750,220" stroke="#4F46E5" stroke-opacity="0.07" stroke-width="1" />
+
+  <!-- Accent visual elements -->
+  <circle cx="700" cy="80" r="100" fill="#7C3AED" fill-opacity="0.15" filter="blur(20px)" />
+  <circle cx="680" cy="120" r="50" fill="#EC4899" fill-opacity="0.1" filter="blur(15px)" />
+  
+  <!-- Decorative Code Bracket Icon on right -->
+  <path d="M 690,70 L 670,90 L 690,110 M 710,70 L 730,90 L 710,110" stroke="url(#accent-grad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" stroke-opacity="0.7" />
+
+  <!-- Info Box -->
+  <text x="50" y="85" class="name-label">Yeshvikaa H</text>
+  <text x="50" y="125" class="title-label">Software Engineer • AI &amp; Mobile Developer</text>
+  <text x="50" y="160" class="tagline-label">Building secure, production-grade applications &amp; ML pipelines</text>
+  <text x="50" y="180" class="tagline-label">Kotlin (Android) | Python (FastAPI/Flask) | Next.js (TypeScript) | Laravel</text>
+</svg>

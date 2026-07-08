@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40" width="600" height="40">
+  <defs>
+    <style>
+      .text-animate {
+        font-family: 'Segoe UI', -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #C084FC;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  <text x="50%" y="25" class="text-animate">
+    Building Intelligent Mobile &amp; Web Systems 🚀
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite" />
+  </text>
+</svg>

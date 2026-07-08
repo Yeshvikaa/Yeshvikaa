@@ -4,26 +4,24 @@
 <!--                   ANIMATED HEADER                   -->
 <!-- ═══════════════════════════════════════════════════ -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Yeshvika%20A&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Software%20Engineer%20%7C%20AI%20%26%20Mobile%20Developer%20%7C%20Full%20Stack%20Engineer&descAlignY=52&descSize=17" width="100%"/>
+<img src="https://raw.githubusercontent.com/Yeshvikaa/Yeshvikaa/main/assets/header.svg" width="100%" alt="Yeshvikaa H Banner"/>
 
 <!-- Typing SVG -->
-<a href="https://github.com/Yeshvikaa">
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=28&duration=3000&pause=800&color=A78BFA&center=true&vCenter=true&multiline=false&width=800&height=60&lines=Building+Intelligent+Mobile+%26+Web+Systems+🚀;AI+%7C+Android+%7C+Full+Stack+%7C+Product+Engineering;Turning+Ideas+into+Production-Ready+Software+⚡;Open+to+Exciting+Opportunities+🌟" alt="Typing SVG" />
-</a>
+<img src="https://raw.githubusercontent.com/Yeshvikaa/Yeshvikaa/main/assets/typing.svg" width="600" alt="Specialties"/>
 
 <br/>
 
 <!-- Social Badges -->
-<a href="https://www.linkedin.com/in/yeshvikaa" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+<a href="https://www.linkedin.com/in/yeshvikaa-h-542564395/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-Yeshvika_H-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
-<a href="mailto:yeshvikaa@gmail.com">
+<a href="mailto:yeshuprojects@gmail.com">
   <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
 </a>
 <a href="https://github.com/Yeshvikaa">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
-<a href="https://github.com/Yeshvikaa">
+<a href="https://www.linkedin.com/in/yeshvikaa-h-542564395/" target="_blank">
   <img src="https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/>
 </a>
 
@@ -48,7 +46,7 @@
 
 ## 🧬 About Me
 
-I'm **Yeshvika A** — a passionate **Software Engineer** and **AI-powered Application Developer** who loves building intelligent, elegant, and impactful software. My engineering philosophy centers around:
+I'm **Yeshvikaa H** — a passionate **Software Engineer** and **AI-powered Application Developer** who loves building intelligent, elegant, and impactful software. My engineering philosophy centers around:
 
 - 🧠 **AI-first thinking** — integrating intelligent features into every product layer
 - 📱 **Mobile-native excellence** — crafting premium Android applications with Kotlin
@@ -79,7 +77,6 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 <div align="center">
 
 ### Languages
-<img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" />
 <img src="https://skillicons.dev/icons?i=javascript" height="40" alt="JavaScript" />
 <img src="https://skillicons.dev/icons?i=kotlin" height="40" alt="Kotlin" />
 <img src="https://skillicons.dev/icons?i=php" height="40" alt="PHP" />
@@ -133,7 +130,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 🚀 Featured Projects
 
-> Auto-generated from GitHub repositories · Last updated: **2026-07-08 03:53 UTC**
+> Auto-generated from GitHub repositories · Last updated: **2026-07-08 13:37 UTC**
 
 <details>
 <summary><b>🔹 Spark App Backend</b> &nbsp;·&nbsp; <code>PHP</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
@@ -146,7 +143,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 |-----------|---------|
 | **Tech Stack** | `PHP` |
 | **Language** | `PHP` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-03-24` |
 | **Status** | 🟡 **Maintained** |
 
@@ -165,9 +162,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Python • SQLite • FastAPI` |
+| **Tech Stack** | `FastAPI • SQLite` |
 | **Language** | `Python` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-04-12` |
 | **Status** | 🟡 **Maintained** |
 
@@ -186,9 +183,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Kotlin • Python • Java` |
+| **Tech Stack** | `Kotlin` |
 | **Language** | `Kotlin` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-03-16` |
 | **Status** | 🟡 **Maintained** |
 
@@ -209,7 +206,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 |-----------|---------|
 | **Tech Stack** | `Kotlin` |
 | **Language** | `Kotlin` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-03-16` |
 | **Status** | 🟡 **Maintained** |
 
@@ -228,9 +225,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `TypeScript • CSS • JavaScript • Next.js` |
+| **Tech Stack** | `Next.js` |
 | **Language** | `TypeScript` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-06-02` |
 | **Status** | 🟡 **Maintained** |
 
@@ -249,9 +246,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Kotlin • Java` |
+| **Tech Stack** | `Kotlin` |
 | **Language** | `Kotlin` |
-| **Commits** | `1+` |
+| **Commits** | `N/A` |
 | **Last Updated** | `2026-03-15` |
 | **Status** | 🟡 **Maintained** |
 
@@ -269,7 +266,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 📂 Complete Project Portfolio
 
-> **28 repositories** spanning **11 programming languages** — auto-discovered and categorized.
+> **28 repositories** spanning **8 programming languages** — auto-discovered and categorized.
 
 
 ### 🌐 Full Stack Web
@@ -406,44 +403,22 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Yeshvikaa&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=8B5CF6&text_color=E2E8F0&ring_color=7C3AED&count_private=true">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yeshvikaa&show_icons=true&theme=tokyonight&hide_border=true&title_color=A78BFA&icon_color=8B5CF6&count_private=true" width="48%" />
-</picture>
+| Metric | Total |
+|---|---|
+| 📂 **Public Repositories** | 28 |
+| ⭐ **Total Stars Received** | 0 |
+| 🍴 **Total Forks Created** | 0 |
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Yeshvikaa&theme=tokyonight&hide_border=true&background=0D1117&ring=A78BFA&fire=7C3AED&currStreakLabel=E2E8F0&sideLabels=E2E8F0">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Yeshvikaa&theme=tokyonight&hide_border=true" width="48%" />
-</picture>
+### 🛠️ Languages Distribution
 
-<br/><br/>
+| Language | Percentage | Graphic Representation |
+|---|---|---|
+| **JavaScript** | 73.1% | `██████████████████████░░░░░░░░` |
+| **TypeScript** | 13.8% | `████░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **CSS** | 9.7% | `███░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **HTML** | 3.3% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **Batchfile** | 0.0% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yeshvikaa&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=E2E8F0&langs_count=10" width="40%" alt="Top Languages"/>
-
-</div>
-
----
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!--               GITHUB TROPHIES                       -->
-<!-- ═══════════════════════════════════════════════════ -->
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Yeshvikaa&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=1&column=7" alt="Trophies" width="100%"/>
-</div>
-
----
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!--           CONTRIBUTION ACTIVITY                     -->
-<!-- ═══════════════════════════════════════════════════ -->
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Yeshvikaa&bg_color=0D1117&color=A78BFA&line=7C3AED&point=E0E7FF&area=true&hide_border=true&area_color=4C1D95" width="100%" alt="Activity Graph"/>
 </div>
 
 ---
@@ -506,8 +481,8 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Platform | Link |
 |----------|------|
-| 💼 **LinkedIn** | [linkedin.com/in/yeshvikaa](https://linkedin.com/in/yeshvikaa) |
-| 📧 **Email** | [yeshvikaa@gmail.com](mailto:yeshvikaa@gmail.com) |
+| 💼 **LinkedIn** | [linkedin.com/in/yeshvikaa-h-542564395](https://www.linkedin.com/in/yeshvikaa-h-542564395/) |
+| 📧 **Email** | [yeshuprojects@gmail.com](mailto:yeshuprojects@gmail.com) |
 | 🐙 **GitHub** | [github.com/Yeshvikaa](https://github.com/Yeshvikaa) |
 | 🌐 **Portfolio** | _Coming soon_ |
 
@@ -526,7 +501,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=&fontSize=0" width="100%"/>
+<hr style="border: 1px dashed #7C3AED; opacity: 0.5; margin: 40px 0;" />
 
 <br/>
 
@@ -534,7 +509,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <br/>
 
-**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 03:53 UTC**
+**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 13:37 UTC**
 
 <br/>
 
