@@ -131,7 +131,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 🚀 Featured Projects
 
-> Auto-generated from GitHub repositories · Last updated: **2026-07-08 13:39 UTC**
+> Auto-generated from GitHub repositories · Last updated: **2026-07-08 14:03 UTC**
 
 <details>
 <summary><b>🔹 Spark App Backend</b> &nbsp;·&nbsp; <code>PHP</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
@@ -403,26 +403,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 ## 📊 GitHub Analytics
 
 <div align="center">
-
-| Metric | Total |
-|---|---|
-| 📂 **Public Repositories** | 28 |
-| ⭐ **Total Stars Received** | 0 |
-| 🍴 **Total Forks Created** | 0 |
-
-### 🛠️ Languages Distribution
-
-| Language | Percentage | Graphic Representation |
-|---|---|---|
-| **Python** | 68.7% | `█████████████████████░░░░░░░░░` |
-| **JavaScript** | 13.2% | `████░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **Kotlin** | 7.2% | `██░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **PHP** | 4.4% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **TypeScript** | 3.8% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **CSS** | 1.9% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **HTML** | 0.6% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **PowerShell** | 0.2% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-
+  <img src="https://raw.githubusercontent.com/Yeshvikaa/Yeshvikaa/main/assets/analytics.svg" width="100%" alt="GitHub Analytics"/>
 </div>
 
 ---
@@ -513,7 +494,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <br/>
 
-**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 13:39 UTC**
+**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 14:03 UTC**
 
 <br/>
 
