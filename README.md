@@ -77,6 +77,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 <div align="center">
 
 ### Languages
+<img src="https://skillicons.dev/icons?i=java" height="40" alt="Java" />
 <img src="https://skillicons.dev/icons?i=javascript" height="40" alt="JavaScript" />
 <img src="https://skillicons.dev/icons?i=kotlin" height="40" alt="Kotlin" />
 <img src="https://skillicons.dev/icons?i=php" height="40" alt="PHP" />
@@ -130,7 +131,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 🚀 Featured Projects
 
-> Auto-generated from GitHub repositories · Last updated: **2026-07-08 13:37 UTC**
+> Auto-generated from GitHub repositories · Last updated: **2026-07-08 13:39 UTC**
 
 <details>
 <summary><b>🔹 Spark App Backend</b> &nbsp;·&nbsp; <code>PHP</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
@@ -143,7 +144,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 |-----------|---------|
 | **Tech Stack** | `PHP` |
 | **Language** | `PHP` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-03-24` |
 | **Status** | 🟡 **Maintained** |
 
@@ -162,9 +163,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `FastAPI • SQLite` |
+| **Tech Stack** | `Python • SQLite • FastAPI` |
 | **Language** | `Python` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-04-12` |
 | **Status** | 🟡 **Maintained** |
 
@@ -183,9 +184,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Kotlin` |
+| **Tech Stack** | `Kotlin • Python • Java` |
 | **Language** | `Kotlin` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-03-16` |
 | **Status** | 🟡 **Maintained** |
 
@@ -206,7 +207,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 |-----------|---------|
 | **Tech Stack** | `Kotlin` |
 | **Language** | `Kotlin` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-03-16` |
 | **Status** | 🟡 **Maintained** |
 
@@ -225,9 +226,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Next.js` |
+| **Tech Stack** | `TypeScript • CSS • JavaScript • Next.js` |
 | **Language** | `TypeScript` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-06-02` |
 | **Status** | 🟡 **Maintained** |
 
@@ -246,9 +247,9 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Attribute | Details |
 |-----------|---------|
-| **Tech Stack** | `Kotlin` |
+| **Tech Stack** | `Kotlin • Java` |
 | **Language** | `Kotlin` |
-| **Commits** | `N/A` |
+| **Commits** | `1+` |
 | **Last Updated** | `2026-03-15` |
 | **Status** | 🟡 **Maintained** |
 
@@ -266,7 +267,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 📂 Complete Project Portfolio
 
-> **28 repositories** spanning **8 programming languages** — auto-discovered and categorized.
+> **28 repositories** spanning **11 programming languages** — auto-discovered and categorized.
 
 
 ### 🌐 Full Stack Web
@@ -413,11 +414,14 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 | Language | Percentage | Graphic Representation |
 |---|---|---|
-| **JavaScript** | 73.1% | `██████████████████████░░░░░░░░` |
-| **TypeScript** | 13.8% | `████░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **CSS** | 9.7% | `███░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **HTML** | 3.3% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
-| **Batchfile** | 0.0% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **Python** | 68.7% | `█████████████████████░░░░░░░░░` |
+| **JavaScript** | 13.2% | `████░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **Kotlin** | 7.2% | `██░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **PHP** | 4.4% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **TypeScript** | 3.8% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **CSS** | 1.9% | `█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **HTML** | 0.6% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
+| **PowerShell** | 0.2% | `░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░` |
 
 </div>
 
@@ -509,7 +513,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <br/>
 
-**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 13:37 UTC**
+**⚡ Auto-updated by GitHub Actions · Last sync: 2026-07-08 13:39 UTC**
 
 <br/>
 
