@@ -32,7 +32,7 @@
 &nbsp;
 <img src="https://img.shields.io/github/followers/Yeshvikaa?style=for-the-badge&color=5B21B6&label=Followers&logo=github&logoColor=white" alt="Followers"/>
 &nbsp;
-<img src="https://img.shields.io/badge/Public_Repos-28-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
+<img src="https://img.shields.io/badge/Public_Repos-29-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="Repos"/>
 
 </div>
 
@@ -131,7 +131,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 🚀 Featured Projects
 
-> Auto-generated from GitHub repositories · Last updated: **2026-10-20 05:06 UTC**
+> Auto-generated from GitHub repositories · Last updated: **2026-10-21 05:07 UTC**
 
 <details>
 <summary><b>🔹 Spark App Backend</b> &nbsp;·&nbsp; <code>PHP</code> &nbsp;·&nbsp; ⭐ 0 &nbsp; 🍴 0</summary>
@@ -267,7 +267,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ## 📂 Complete Project Portfolio
 
-> **28 repositories** spanning **11 programming languages** — auto-discovered and categorized.
+> **29 repositories** spanning **11 programming languages** — auto-discovered and categorized.
 
 
 ### 🌐 Full Stack Web
@@ -303,6 +303,7 @@ fun_fact: "I've shipped 28+ production projects spanning healthcare, education &
 
 ### 🛠️ Automation & Tools
 
+- **[Sumathi Finance Corporation](https://github.com/Yeshvikaa/sumathi_finance_corporation)** — Professional Python project
 - **[Boew](https://github.com/Yeshvikaa/BOEW)** — Back of Envelope Web — rapid prototyping and feasibility calculation tool for engineers and product managers, enabling q...
 
 ### 🤖 AI & Machine Learning
@@ -494,7 +495,7 @@ Feel free to reach out — I reply to everyone! ✉️
 
 <br/>
 
-**⚡ Auto-updated by GitHub Actions · Last sync: 2026-10-20 05:06 UTC**
+**⚡ Auto-updated by GitHub Actions · Last sync: 2026-10-21 05:07 UTC**
 
 <br/>
 
